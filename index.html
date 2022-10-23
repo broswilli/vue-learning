@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+       <!--- <input type="text" id="input" v-model="newName"> <button v-on:click="addName">Add Text</button> -->
+       <input type="text" id="input" v-model="newName"> <button @click="addName">Add Text</button>
+       <h1>{{ reversedMessage }}</h1>
+        <p>{{ message }}</p>
+        <ul>
+            <li v-for="name in names" v-text="name"></li>
+        </ul>
+
+        <h1>All Tasks</h1>
+        <ul>
+          <li v-for="task in tasks" v-text="task.description"></li>
+        </ul>
+
+        <h1>Incomplete Tasks</h1>
+        <ul>
+          <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        </ul>
+
+    </div>
+
+
+
+    <script src="./js/vue.js"></script>
+    <script>
+
+        var app = new Vue({
+                            el: '#root',
+
+                            data: {
+                                    message: 'Hello World',
+                                    newName: '',
+                                    names: ['joe', 'mary', 'jane', 'jack'],
+                                    tasks: [
+                                            {'description': 'Go to market', 'completed': true},
+                                            {'description': 'Wash the cloths', 'completed': false},
+                                            {'description': 'Visit the agency', 'completed': false},
+                                            {'description': 'Organize meeting', 'completed': false},
+                                            {'description': 'Comunity service', 'completed': true},
+                                            {'description': 'Arrange for purchase of equipments', 'completed': true}
+                                          ]
+                                    },
+
+                            methods:{
+                                addName(){
+                                    this.names.push(this.newName)
+                                    this.newName = ''
+                                }
+
+                            },
+
+                            computed: {
+                                reversedMessage(){
+                                    return this.message.split('').reverse().join('')
+                                },
+
+                                incompleteTasks(){
+                                  return this.tasks.filter(task => ! task.completed)
+                                }
+                            },
+
+                            mounted(){
+                                /**
+                                document.querySelector('#button').addEventListener('click', () => {
+                                    let name = document.querySelector('#input')
+                                    app.names.push(name.value)
+                                    name.value = ''
+                                });
+                                **/
+                            }
+
+                        })
+
+
+    </script>
+</body>
+</html>
