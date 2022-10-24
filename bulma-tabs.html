@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulma Component Tabs Example</title>
+    <link rel="stylesheet" href="./css/bulma.min.css">
+    <style type="text/css">
+      body{padding-top: 40px;}
+    </style>
+  </head>
+  <body>
+    <div id="root" class="container">
+      <tabs>
+        <tab name="About us" :selected="true">
+          <h1>Here is the content of the about us tab</h1>
+        </tab>
+        <tab name="Services">
+          <h1>Here is the content of the services tab</h1>
+        </tab>
+        <tab name="Testimonials">
+          <h1>Here is the content of the Testimonials tab</h1>
+        </tab>
+        <tab name="FAQ">
+          <h1>Here is the content of the FAQ tab</h1>
+        </tab>
+      </tabs>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/bulma-tabs-component.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulma Component Modal Example</title>
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <style type="text/css">
+    body{padding-top: 40px;}
+  </style>
+</head>
+  <body>
+    <div id="root">
+      <b-modal v-show="showModal" @close="showModal=false">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </b-modal>
+      <button type="button" @click="showModal=true">Display Modal</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/bulma-modal-component.js"></script>
+  </body>
+</html>
