@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::get('/skills', function(){
   return ['PHP', 'Java', 'Laravel', 'Vue', 'Javascript', 'Mysql', 'C#'];
 });
+
+Route::resource('/project', ProjectController::class);
